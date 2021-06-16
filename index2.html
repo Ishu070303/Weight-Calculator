@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body{
+            margin-top: 70px;
+            background: rgb(34, 33, 33);
+            color:white
+            
+        }
+        #yami{
+            padding: 11px;
+        }
+        .grams{
+            background: blue;
+        }
+        .kilograms{
+            background: green;
+        }
+        .ounces{
+            background: red;
+        }
+        
+    </style>
+    <title>Weight Converter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 text-center">
+                    Wieght Converter
+                </h1>
+                <form>
+                    <div class="form-group mb-3">
+                        <input id="lbsInput" 
+                        type="number"
+                        placeholder="Enter pounds..." 
+                        class="form-control form-control-lg">
+                    </div>
+                </form>
+                <div id="output">
+                    <div class="card grams mb-2">
+                        <div class="card-block " id="yami" >
+                            <h4>Grams:</h4>
+                            <div id="gramsOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card  kilograms mb-2">
+                        <div class="card-block" id="yami">
+                            <h4>Kilograms:</h4>
+                            <div id="kgOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card ounces mb-2">
+                        <div class="card-block" id= "yami">
+                            <h4>Ounces:</h4>
+                            <div id="ozOutput"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $('#output').css('visibility','hidden');
+        $('#lbsInput').keyup(e=>{
+            var eshika=e.target.value;
+            $('#output').css('visibility','');
+            $('#gramsOutput').html(eshika/0.0022046);
+            $('#kgOutput').html(eshika/2.2046);
+            $('#ozOutput').html(eshika*16)
+        })
+
+    </script>
+</body>
+</html>
